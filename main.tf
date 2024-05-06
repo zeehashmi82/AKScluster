@@ -24,8 +24,8 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   windows_profile {
-    admin_username = "adminusername"
-    admin_password = "Dangerzone!@#$%^&*()"
+    admin_username = "******"
+    admin_password = "*********"
   }
 
   network_profile {
