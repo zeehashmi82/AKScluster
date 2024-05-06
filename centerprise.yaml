@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: centerprise9
+  labels:
+    app: centerprise9
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: centerprise9
+      labels:
+        app: centerprise9
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": windows
+      containers:
+      - name: centerprise9
+        image: danishsachwani/asteraintegration9443
+        resources:
+          limits:
+            cpu: 1
+            memory: 3G
+        ports:
+          - containerPort: 443
+  selector:
+    matchLabels:
+      app: centerprise9
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: centerprise9
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 443
+  selector:
+    app: centerprise9

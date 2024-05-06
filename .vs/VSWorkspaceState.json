@@ -1,0 +1,9 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.terraform",
+    "\\.terraform\\providers"
+  ],
+  "SelectedNode": "\\main.tf",
+  "PreviewInSolutionExplorer": false
+}
